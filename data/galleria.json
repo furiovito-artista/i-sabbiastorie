@@ -1,0 +1,50 @@
+[
+  {
+    "titolo": "Peter e Trilli",
+    "immagine": "assets/images/peter-e-trilli.webp",
+    "ordine": 10,
+    "mostra": true
+  },
+  {
+    "titolo": "L’Isola che non c’è",
+    "immagine": "assets/images/isola-che-non-ce.webp",
+    "ordine": 20,
+    "mostra": true
+  },
+  {
+    "titolo": "Il coccodrillo",
+    "immagine": "assets/images/coccodrillo.webp",
+    "ordine": 30,
+    "mostra": true
+  },
+  {
+    "titolo": "La nave e il volo",
+    "immagine": "assets/images/nave-e-volo.webp",
+    "ordine": 40,
+    "mostra": true
+  },
+  {
+    "titolo": "Capitan Uncino",
+    "immagine": "assets/images/capitan-uncino.webp",
+    "ordine": 50,
+    "mostra": true
+  },
+  {
+    "titolo": "Il cielo stellato",
+    "immagine": "assets/images/cielo-stellato.webp",
+    "ordine": 60,
+    "mostra": true
+  },
+  {
+    "titolo": "Wendy alla finestra",
+    "immagine": "assets/images/wendy-alla-finestra.webp",
+    "ordine": 70,
+    "mostra": true
+  },
+  {
+    "titolo": "La nave dei pirati",
+    "immagine": "assets/images/nave-pirati.webp",
+    "ordine": 80,
+    "mostra": true
+  }
+]

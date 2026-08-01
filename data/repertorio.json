@@ -1,0 +1,110 @@
+[
+  {
+    "titolo": "Bergel Circus",
+    "tipologia": "Teatro e Sand Art",
+    "ordine": 10,
+    "mostra": true
+  },
+  {
+    "titolo": "La rivolta del presepe",
+    "tipologia": "Teatro e Sand Art",
+    "ordine": 20,
+    "mostra": true
+  },
+  {
+    "titolo": "Iris, amami amore",
+    "tipologia": "Storia d’amore",
+    "ordine": 30,
+    "mostra": true
+  },
+  {
+    "titolo": "Cappuccetto Rosso",
+    "tipologia": "Spettacolo comico, teatro e Sand Art",
+    "ordine": 40,
+    "mostra": true
+  },
+  {
+    "titolo": "Il lupo che voleva fare la pizza",
+    "tipologia": "Teatro e Sand Art",
+    "ordine": 50,
+    "mostra": true
+  },
+  {
+    "titolo": "Domo Mea — Il rifugio degli animali",
+    "tipologia": "Favola originale, teatro e Sand Art",
+    "ordine": 60,
+    "mostra": true
+  },
+  {
+    "titolo": "Mini fiabe di Stellina",
+    "tipologia": "Sand Art e narrazione",
+    "ordine": 70,
+    "mostra": true
+  },
+  {
+    "titolo": "Shoah",
+    "tipologia": "Teatro e Sand Art",
+    "ordine": 80,
+    "mostra": true
+  },
+  {
+    "titolo": "Il rapimento di Babbo Natale",
+    "tipologia": "Teatro e Sand Art",
+    "ordine": 90,
+    "mostra": true
+  },
+  {
+    "titolo": "Peter Pan",
+    "tipologia": "Sand Art e narrazione",
+    "ordine": 100,
+    "mostra": true
+  },
+  {
+    "titolo": "Canto di Natale",
+    "tipologia": "Sand Art e narrazione",
+    "ordine": 110,
+    "mostra": true
+  },
+  {
+    "titolo": "Sant’Antoni e Su Fogu",
+    "tipologia": "Sand Art e narrazione",
+    "ordine": 120,
+    "mostra": true
+  },
+  {
+    "titolo": "Il secondo viaggio del Piccolo Principe",
+    "tipologia": "Narrazione e Sand Art",
+    "ordine": 130,
+    "mostra": true
+  },
+  {
+    "titolo": "L’Inventastorie",
+    "tipologia": "Improvvisazione interattiva",
+    "ordine": 140,
+    "mostra": true
+  },
+  {
+    "titolo": "Meravigliamoci",
+    "tipologia": "Presentazione di progetto",
+    "ordine": 150,
+    "mostra": true
+  },
+  {
+    "titolo": "La Jana e il pastore innamorato",
+    "tipologia": "Kamishibai",
+    "ordine": 160,
+    "mostra": true
+  },
+  {
+    "titolo": "La Bella e la Bestia",
+    "tipologia": "Sand Art e narrazione",
+    "ordine": 170,
+    "mostra": true
+  },
+  {
+    "titolo": "Mary Poppins",
+    "tipologia": "Sand Art e narrazione",
+    "ordine": 180,
+    "mostra": true
+  }
+]

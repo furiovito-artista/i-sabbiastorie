@@ -1,0 +1,74 @@
+[
+  {
+    "id": "peter-pan",
+    "titolo": "Peter Pan",
+    "categoria": "Fiabe e grandi classici",
+    "descrizione": "Sand Art e narrazione per attraversare l’Isola che non c’è, il volo, l’avventura e il desiderio di restare bambini.",
+    "immagine": "assets/images/peter-e-trilli.webp",
+    "in_evidenza": true,
+    "ordine": 10
+  },
+  {
+    "id": "canto-di-natale",
+    "titolo": "Canto di Natale",
+    "categoria": "Spettacoli natalizi",
+    "descrizione": "Un racconto visivo ispirato al classico natalizio, tra memoria, trasformazione e possibilità di ricominciare.",
+    "immagine": "assets/images/cielo-stellato.webp",
+    "in_evidenza": true,
+    "ordine": 20
+  },
+  {
+    "id": "bella-e-bestia",
+    "titolo": "La Bella e la Bestia",
+    "categoria": "Fiabe e grandi classici",
+    "descrizione": "Una storia di sguardi, paura e riconoscimento raccontata attraverso voce, musica e immagini che mutano nella sabbia.",
+    "immagine": "assets/images/wendy-alla-finestra.webp",
+    "in_evidenza": true,
+    "ordine": 30
+  },
+  {
+    "id": "mary-poppins",
+    "titolo": "Mary Poppins",
+    "categoria": "Fiabe e grandi classici",
+    "descrizione": "Un viaggio poetico e musicale dove l’ordinario si apre alla meraviglia.",
+    "immagine": "assets/images/nave-e-volo.webp",
+    "in_evidenza": true,
+    "ordine": 40
+  },
+  {
+    "id": "shoah",
+    "titolo": "Shoah",
+    "categoria": "Memoria e impegno civile",
+    "descrizione": "Teatro e Sand Art per custodire la memoria con rigore, delicatezza e forza visiva.",
+    "immagine": "assets/images/hero-sabbiastorie.webp",
+    "in_evidenza": true,
+    "ordine": 50
+  },
+  {
+    "id": "piccolo-principe",
+    "titolo": "Il secondo viaggio del Piccolo Principe",
+    "categoria": "Fiabe e grandi classici",
+    "descrizione": "Un racconto di incontri, domande e paesaggi interiori, nato anche come presentazione del murale di Cargeghe.",
+    "immagine": "assets/images/isola-che-non-ce.webp",
+    "in_evidenza": true,
+    "ordine": 60
+  },
+  {
+    "id": "inventastorie",
+    "titolo": "L’Inventastorie",
+    "categoria": "Spettacoli interattivi",
+    "descrizione": "Il pubblico offre parole, personaggi e luoghi: la storia prende forma dal vivo tra improvvisazione, voce e sabbia.",
+    "immagine": "assets/images/capitan-uncino.webp",
+    "in_evidenza": true,
+    "ordine": 70
+  },
+  {
+    "id": "sotto-le-stelle",
+    "titolo": "I Sabbiastorie sotto le stelle",
+    "categoria": "Proposte estive",
+    "descrizione": "Una serata per piazze e spazi all’aperto con fiabe, musica, Sand Art e momenti interattivi.",
+    "immagine": "assets/images/nave-pirati.webp",
+    "in_evidenza": true,
+    "ordine": 80
+  }
+]

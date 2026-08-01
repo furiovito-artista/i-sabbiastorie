@@ -1,0 +1,123 @@
+media:
+  name: immagini
+  label: Immagini del sito
+  input: assets/images
+  output: assets/images
+  extensions: [jpg, jpeg, png, webp, svg]
+  categories: [image]
+  rename: safe
+
+content:
+  - name: sito
+    label: Testi e impostazioni
+    type: file
+    path: data/sito.json
+    format: json
+    fields:
+      - {name: titolo_pagina, label: Titolo per Google, type: string, required: true}
+      - {name: descrizione_pagina, label: Descrizione per Google, type: text}
+      - name: immagine_copertina
+        label: Immagine grande di copertina
+        type: image
+        required: true
+        options: {media: immagini}
+      - {name: testo_copertina, label: Slogan grande, type: string, required: true}
+      - {name: testo_sotto_copertina, label: Testo sotto lo slogan, type: text}
+
+      - {name: menu_chi_siamo, label: Voce menu Chi siamo, type: string}
+      - {name: menu_spettacoli, label: Voce menu Spettacoli, type: string}
+      - {name: menu_repertorio, label: Voce menu Repertorio, type: string}
+      - {name: menu_galleria, label: Voce menu Galleria, type: string}
+      - {name: menu_contatti, label: Voce menu Contatti, type: string}
+
+      - {name: etichetta_chi_siamo, label: Etichetta Chi siamo, type: string}
+      - {name: titolo_profilo, label: Titolo Chi siamo, type: string}
+      - {name: profilo_paragrafo_1, label: Primo paragrafo Chi siamo, type: text}
+      - {name: profilo_paragrafo_2, label: Secondo paragrafo Chi siamo, type: text}
+      - {name: vito_nome, label: Nome di Vito, type: string}
+      - {name: vito_ruolo, label: Descrizione di Vito, type: text}
+      - {name: daniela_nome, label: Nome di Daniela, type: string}
+      - {name: daniela_ruolo, label: Descrizione di Daniela, type: text}
+
+      - {name: etichetta_spettacoli, label: Etichetta Spettacoli, type: string}
+      - {name: titolo_spettacoli, label: Titolo sezione Spettacoli, type: string}
+      - {name: testo_spettacoli, label: Introduzione Spettacoli, type: text}
+
+      - {name: etichetta_repertorio, label: Etichetta Repertorio, type: string}
+      - {name: titolo_repertorio, label: Titolo sezione Repertorio, type: string}
+      - {name: testo_repertorio, label: Introduzione Repertorio, type: text}
+
+      - {name: etichetta_galleria, label: Etichetta Galleria, type: string}
+      - {name: titolo_galleria, label: Titolo sezione Galleria, type: string}
+      - {name: testo_galleria, label: Introduzione Galleria, type: text}
+
+      - {name: frase, label: Frase centrale, type: text}
+
+      - {name: etichetta_contatti, label: Etichetta Contatti, type: string}
+      - {name: titolo_contatti, label: Titolo Contatti, type: string}
+      - {name: testo_contatti, label: Testo Contatti, type: text}
+      - {name: etichetta_email, label: Etichetta Email, type: string}
+      - {name: etichetta_telefono, label: Etichetta Telefono, type: string}
+      - {name: email, label: Email, type: string}
+      - {name: telefono, label: Telefono, type: string}
+      - {name: luogo, label: Luogo e disponibilità, type: string}
+      - {name: url_sito, label: Indirizzo del sito, type: string}
+      - {name: testo_footer, label: Testo in fondo al sito, type: string}
+
+  - name: spettacoli
+    label: Spettacoli
+    type: file
+    path: data/spettacoli.json
+    format: json
+    list: true
+    fields:
+      - {name: id, label: Codice interno senza spazi, type: string, required: true}
+      - {name: titolo, label: Titolo, type: string, required: true}
+      - {name: categoria, label: Categoria, type: string}
+      - {name: descrizione, label: Descrizione, type: text}
+      - name: immagine
+        label: Fotografia
+        type: image
+        required: true
+        options: {media: immagini}
+      - {name: ordine, label: Ordine, type: number, required: true}
+      - {name: in_evidenza, label: Mostra nel sito, type: boolean, default: true}
+
+  - name: repertorio
+    label: Repertorio
+    type: file
+    path: data/repertorio.json
+    format: json
+    list: true
+    fields:
+      - {name: titolo, label: Titolo, type: string, required: true}
+      - {name: tipologia, label: Tipologia, type: string}
+      - {name: ordine, label: Ordine, type: number, required: true}
+      - {name: mostra, label: Mostra nel sito, type: boolean, default: true}
+
+  - name: galleria
+    label: Galleria
+    type: file
+    path: data/galleria.json
+    format: json
+    list: true
+    fields:
+      - {name: titolo, label: Titolo della fotografia, type: string, required: true}
+      - name: immagine
+        label: Fotografia
+        type: image
+        required: true
+        options: {media: immagini}
+      - {name: ordine, label: Ordine, type: number, required: true}
+      - {name: mostra, label: Mostra nel sito, type: boolean, default: true}
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      create: "Aggiunge {path}"
+      update: "Aggiorna {path}"
+      delete: "Elimina {path}"
+      rename: "Rinomina {oldPath} in {newPath}"
