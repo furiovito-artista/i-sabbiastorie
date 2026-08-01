@@ -13,7 +13,7 @@
     "titolo": "Canto di Natale",
     "categoria": "Spettacoli natalizi",
     "descrizione": "Un racconto visivo ispirato al classico natalizio, tra memoria, trasformazione e possibilità di ricominciare.",
-    "immagine": "assets/images/cielo-stellato.webp",
+    "immagine": "assets/images/img20241218172137-1.jpg",
     "ordine": 20,
     "in_evidenza": true
   },
@@ -22,7 +22,7 @@
     "titolo": "La Bella e la Bestia",
     "categoria": "Fiabe e grandi classici",
     "descrizione": "Una storia di sguardi, paura e riconoscimento raccontata attraverso voce, musica e immagini che mutano nella sabbia.",
-    "immagine": "assets/images/wendy-alla-finestra.webp",
+    "immagine": "assets/images/img20251214150906.jpg",
     "ordine": 30,
     "in_evidenza": true
   },
@@ -31,7 +31,7 @@
     "titolo": "Mary Poppins",
     "categoria": "Fiabe e grandi classici",
     "descrizione": "Un viaggio poetico e musicale dove l’ordinario si apre alla meraviglia.",
-    "immagine": "assets/images/nave-e-volo.webp",
+    "immagine": "assets/images/img-20220712-wa0006.jpg",
     "ordine": 40,
     "in_evidenza": true
   },
@@ -40,7 +40,7 @@
     "titolo": "Shoah",
     "categoria": "Memoria e impegno civile",
     "descrizione": "Teatro e Sand Art per custodire la memoria con rigore, delicatezza e forza visiva.",
-    "immagine": "assets/images/hero-sabbiastorie.webp",
+    "immagine": "assets/images/img-20230128-wa0000.jpg",
     "ordine": 50,
     "in_evidenza": true
   },
@@ -49,7 +49,7 @@
     "titolo": "Il secondo viaggio del Piccolo Principe",
     "categoria": "Fiabe e grandi classici",
     "descrizione": "Un racconto di incontri, domande e paesaggi interiori, nato anche come presentazione del murale di Cargeghe.",
-    "immagine": "assets/images/isola-che-non-ce.webp",
+    "immagine": "assets/images/img-20241203-wa0008.jpg",
     "ordine": 60,
     "in_evidenza": true
   },
@@ -58,7 +58,7 @@
     "titolo": "L’Inventastorie",
     "categoria": "Spettacoli interattivi",
     "descrizione": "Il pubblico offre parole, personaggi e luoghi: la storia prende forma dal vivo tra improvvisazione, voce e sabbia.",
-    "immagine": "assets/images/capitan-uncino.webp",
+    "immagine": "assets/images/img-20240903-wa0012.jpg",
     "ordine": 70,
     "in_evidenza": true
   },
@@ -67,7 +67,7 @@
     "titolo": "I Sabbiastorie sotto le stelle",
     "categoria": "Proposte estive",
     "descrizione": "Una serata per piazze e spazi all’aperto con fiabe, musica, Sand Art e momenti interattivi.",
-    "immagine": "assets/images/nave-pirati.webp",
+    "immagine": "assets/images/img-20211205-wa0030.jpg",
     "ordine": 80,
     "in_evidenza": true
   }
