@@ -4,9 +4,9 @@
     "titolo": "Peter Pan",
     "categoria": "Fiabe e grandi classici",
     "descrizione": "Sand Art e narrazione per attraversare l’Isola che non c’è, il volo, l’avventura e il desiderio di restare bambini.",
-    "immagine": "assets/images/peter-e-trilli.webp",
-    "in_evidenza": true,
-    "ordine": 10
+    "immagine": "assets/images/img-20241216-wa0006.jpg",
+    "ordine": 10,
+    "in_evidenza": true
   },
   {
     "id": "canto-di-natale",
@@ -14,8 +14,8 @@
     "categoria": "Spettacoli natalizi",
     "descrizione": "Un racconto visivo ispirato al classico natalizio, tra memoria, trasformazione e possibilità di ricominciare.",
     "immagine": "assets/images/cielo-stellato.webp",
-    "in_evidenza": true,
-    "ordine": 20
+    "ordine": 20,
+    "in_evidenza": true
   },
   {
     "id": "bella-e-bestia",
@@ -23,8 +23,8 @@
     "categoria": "Fiabe e grandi classici",
     "descrizione": "Una storia di sguardi, paura e riconoscimento raccontata attraverso voce, musica e immagini che mutano nella sabbia.",
     "immagine": "assets/images/wendy-alla-finestra.webp",
-    "in_evidenza": true,
-    "ordine": 30
+    "ordine": 30,
+    "in_evidenza": true
   },
   {
     "id": "mary-poppins",
@@ -32,8 +32,8 @@
     "categoria": "Fiabe e grandi classici",
     "descrizione": "Un viaggio poetico e musicale dove l’ordinario si apre alla meraviglia.",
     "immagine": "assets/images/nave-e-volo.webp",
-    "in_evidenza": true,
-    "ordine": 40
+    "ordine": 40,
+    "in_evidenza": true
   },
   {
     "id": "shoah",
@@ -41,8 +41,8 @@
     "categoria": "Memoria e impegno civile",
     "descrizione": "Teatro e Sand Art per custodire la memoria con rigore, delicatezza e forza visiva.",
     "immagine": "assets/images/hero-sabbiastorie.webp",
-    "in_evidenza": true,
-    "ordine": 50
+    "ordine": 50,
+    "in_evidenza": true
   },
   {
     "id": "piccolo-principe",
@@ -50,8 +50,8 @@
     "categoria": "Fiabe e grandi classici",
     "descrizione": "Un racconto di incontri, domande e paesaggi interiori, nato anche come presentazione del murale di Cargeghe.",
     "immagine": "assets/images/isola-che-non-ce.webp",
-    "in_evidenza": true,
-    "ordine": 60
+    "ordine": 60,
+    "in_evidenza": true
   },
   {
     "id": "inventastorie",
@@ -59,8 +59,8 @@
     "categoria": "Spettacoli interattivi",
     "descrizione": "Il pubblico offre parole, personaggi e luoghi: la storia prende forma dal vivo tra improvvisazione, voce e sabbia.",
     "immagine": "assets/images/capitan-uncino.webp",
-    "in_evidenza": true,
-    "ordine": 70
+    "ordine": 70,
+    "in_evidenza": true
   },
   {
     "id": "sotto-le-stelle",
@@ -68,7 +68,7 @@
     "categoria": "Proposte estive",
     "descrizione": "Una serata per piazze e spazi all’aperto con fiabe, musica, Sand Art e momenti interattivi.",
     "immagine": "assets/images/nave-pirati.webp",
-    "in_evidenza": true,
-    "ordine": 80
+    "ordine": 80,
+    "in_evidenza": true
   }
 ]
