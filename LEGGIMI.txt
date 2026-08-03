@@ -1,0 +1,25 @@
+AGGIORNAMENTO VIDEO YOUTUBE
+
+Questo pacchetto aggiunge al sito:
+- una sezione “I Sabbiastorie in scena” dopo gli Spettacoli;
+- video YouTube visibili direttamente nella pagina;
+- la voce “Video YouTube” dentro Pages CMS;
+- titolo, descrizione, link, ordine e visibilità modificabili;
+- caricamento senza autoplay e con youtube-nocookie.com.
+
+FILE DA CARICARE SU GITHUB
+- index.html
+- .pages.yml
+- data/video.json
+
+Dopo il caricamento:
+1. Apri Pages CMS.
+2. Apri i-sabbiastorie.
+3. Entra in “Video YouTube”.
+4. Aggiungi un elemento.
+5. Incolla un normale link YouTube.
+6. Imposta ordine 10, 20, 30...
+7. Lascia attivo “Mostra nel sito”.
+8. Salva.
+
+La sezione Video resta nascosta finché non viene inserito almeno un collegamento valido.

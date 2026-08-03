@@ -86,6 +86,14 @@
     .card h3{font-family:Georgia,serif;font-size:2rem;line-height:1;margin:9px 0 10px}
     .card p{margin:0;color:var(--muted)}
 
+    .video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:25px}
+    .video-card{overflow:hidden;border-radius:24px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+    .video-frame{position:relative;aspect-ratio:16/9;background:#080503;overflow:hidden}
+    .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .video-body{padding:20px 22px 22px}
+    .video-body h3{font-family:Georgia,serif;font-size:1.8rem;line-height:1.05;margin:0 0 9px}
+    .video-body p{margin:0;color:var(--muted)}
+
     .repertoire-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:26px;align-items:start}
     .rep-list{display:grid;gap:11px}
     .rep-item{
@@ -143,7 +151,7 @@
       .hero{min-height:auto}
       .hero img{height:auto;min-height:54svh;object-fit:contain}
       .slogan{padding:40px 18px 32px}
-      .cards,.gallery{grid-template-columns:1fr}
+      .cards,.video-grid,.gallery{grid-template-columns:1fr}
       .panel{padding:25px}
       .nav-inner a{font-size:.69rem;padding:8px 9px}
     }
@@ -164,6 +172,7 @@
   <div class="wrap nav-inner">
     <a id="menu-chi" href="#chi-siamo"></a>
     <a id="menu-spettacoli" href="#spettacoli"></a>
+    <a id="menu-video" href="#video">Video</a>
     <a id="menu-repertorio" href="#repertorio"></a>
     <a id="menu-galleria" href="#galleria"></a>
     <a id="menu-contatti" href="#contatti"></a>
@@ -190,6 +199,13 @@
       <h2 id="title-shows"></h2>
       <p class="lead" id="text-shows"></p>
       <div class="cards" id="cards"></div>
+    </section>
+
+    <section class="panel" id="video" hidden>
+      <span class="eyebrow">Dal vivo</span>
+      <h2>I Sabbiastorie in scena</h2>
+      <p class="lead">Video degli spettacoli visibili direttamente nel sito.</p>
+      <div class="video-grid" id="video-grid"></div>
     </section>
 
     <section class="panel repertoire-grid" id="repertorio">
@@ -232,11 +248,11 @@
 
 <script>
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-const FALLBACK_DATA={"data/sito.json":{"titolo_pagina":"I Sabbiastorie — Sand Art, voce e teatro","descrizione_pagina":"Spettacoli di Sand Art, narrazione e teatro con Vito Furio e Daniela. Fiabe, memoria, eventi, scuole e festival.","immagine_copertina":"assets/images/logo-copertina-sabbiastorie.webp","testo_copertina":"La sabbia racconta.","testo_sotto_copertina":"Sand Art, voce e teatro in un incontro vivo con il pubblico.","menu_chi_siamo":"Chi siamo","menu_spettacoli":"Spettacoli","menu_repertorio":"Repertorio","menu_galleria":"Galleria","menu_contatti":"Contatti","etichetta_chi_siamo":"Chi siamo","titolo_profilo":"La scena diventa un foglio di luce.","profilo_paragrafo_1":"I Sabbiastorie sono Vito Furio e Daniela Simula. La Sand Art prende forma davanti al pubblico mentre la voce accompagna personaggi, paesaggi e trasformazioni.","profilo_paragrafo_2":"Gli spettacoli uniscono immagine dal vivo, narrazione e teatro, con proposte per teatri, scuole, festival, biblioteche, piazze ed eventi culturali.","vito_nome":"Vito Furio","vito_ruolo":"Sand Artist, artista visivo e regia","daniela_nome":"Daniela Simula","daniela_ruolo":"Voce narrante e interpretazione","etichetta_spettacoli":"In scena","titolo_spettacoli":"Spettacoli","testo_spettacoli":"Fiabe, classici, memoria e proposte interattive raccontate attraverso immagini dal vivo, parola e teatro.","etichetta_repertorio":"Archivio","titolo_repertorio":"Il repertorio","testo_repertorio":"Una selezione dei progetti sviluppati nel tempo, adattabili a spazi, pubblici e occasioni differenti.","etichetta_galleria":"Immagini","titolo_galleria":"Galleria","testo_galleria":"Fotogrammi di Sand Art. Le immagini potranno essere sostituite con una selezione più rappresentativa.","frase":"La sabbia non conserva la forma: conserva il passaggio.","etichetta_contatti":"Contatti","titolo_contatti":"Portiamo una storia nel tuo spazio.","testo_contatti":"Per spettacoli, eventi culturali, scuole, festival, biblioteche e progetti speciali.","etichetta_email":"Email","etichetta_telefono":"Telefono e WhatsApp","email":"furiovito@gmail.com","telefono":"+39 333 334 4665","luogo":"Sardegna • disponibili per trasferte","url_sito":"https://i-sabbiastorie.furiovito.workers.dev/","testo_footer":"I Sabbiastorie — Sand Art, voce e teatro"},"data/spettacoli.json":[{"id":"peter-pan","titolo":"Peter Pan","categoria":"Fiabe e grandi classici","descrizione":"Sand Art e narrazione per attraversare l’Isola che non c’è, il volo, l’avventura e il desiderio di restare bambini.","immagine":"assets/images/peter-e-trilli.webp","in_evidenza":true,"ordine":10},{"id":"canto-di-natale","titolo":"Canto di Natale","categoria":"Spettacoli natalizi","descrizione":"Un racconto visivo ispirato al classico natalizio, tra memoria, trasformazione e possibilità di ricominciare.","immagine":"assets/images/cielo-stellato.webp","in_evidenza":true,"ordine":20},{"id":"bella-e-bestia","titolo":"La Bella e la Bestia","categoria":"Fiabe e grandi classici","descrizione":"Una storia di sguardi, paura e riconoscimento raccontata attraverso voce, musica e immagini che mutano nella sabbia.","immagine":"assets/images/wendy-alla-finestra.webp","in_evidenza":true,"ordine":30},{"id":"mary-poppins","titolo":"Mary Poppins","categoria":"Fiabe e grandi classici","descrizione":"Un viaggio poetico e musicale dove l’ordinario si apre alla meraviglia.","immagine":"assets/images/nave-e-volo.webp","in_evidenza":true,"ordine":40},{"id":"shoah","titolo":"Shoah","categoria":"Memoria e impegno civile","descrizione":"Teatro e Sand Art per custodire la memoria con rigore, delicatezza e forza visiva.","immagine":"assets/images/hero-sabbiastorie.webp","in_evidenza":true,"ordine":50},{"id":"piccolo-principe","titolo":"Il secondo viaggio del Piccolo Principe","categoria":"Fiabe e grandi classici","descrizione":"Un racconto di incontri, domande e paesaggi interiori, nato anche come presentazione del murale di Cargeghe.","immagine":"assets/images/isola-che-non-ce.webp","in_evidenza":true,"ordine":60},{"id":"inventastorie","titolo":"L’Inventastorie","categoria":"Spettacoli interattivi","descrizione":"Il pubblico offre parole, personaggi e luoghi: la storia prende forma dal vivo tra improvvisazione, voce e sabbia.","immagine":"assets/images/capitan-uncino.webp","in_evidenza":true,"ordine":70},{"id":"sotto-le-stelle","titolo":"I Sabbiastorie sotto le stelle","categoria":"Proposte estive","descrizione":"Una serata per piazze e spazi all’aperto con fiabe, musica, Sand Art e momenti interattivi.","immagine":"assets/images/nave-pirati.webp","in_evidenza":true,"ordine":80}],"data/repertorio.json":[{"titolo":"Bergel Circus","tipologia":"Teatro e Sand Art","ordine":10,"mostra":true},{"titolo":"La rivolta del presepe","tipologia":"Teatro e Sand Art","ordine":20,"mostra":true},{"titolo":"Iris, amami amore","tipologia":"Storia d’amore","ordine":30,"mostra":true},{"titolo":"Cappuccetto Rosso","tipologia":"Spettacolo comico, teatro e Sand Art","ordine":40,"mostra":true},{"titolo":"Il lupo che voleva fare la pizza","tipologia":"Teatro e Sand Art","ordine":50,"mostra":true},{"titolo":"Domo Mea — Il rifugio degli animali","tipologia":"Favola originale, teatro e Sand Art","ordine":60,"mostra":true},{"titolo":"Mini fiabe di Stellina","tipologia":"Sand Art e narrazione","ordine":70,"mostra":true},{"titolo":"Shoah","tipologia":"Teatro e Sand Art","ordine":80,"mostra":true},{"titolo":"Il rapimento di Babbo Natale","tipologia":"Teatro e Sand Art","ordine":90,"mostra":true},{"titolo":"Peter Pan","tipologia":"Sand Art e narrazione","ordine":100,"mostra":true},{"titolo":"Canto di Natale","tipologia":"Sand Art e narrazione","ordine":110,"mostra":true},{"titolo":"Sant’Antoni e Su Fogu","tipologia":"Sand Art e narrazione","ordine":120,"mostra":true},{"titolo":"Il secondo viaggio del Piccolo Principe","tipologia":"Narrazione e Sand Art","ordine":130,"mostra":true},{"titolo":"L’Inventastorie","tipologia":"Improvvisazione interattiva","ordine":140,"mostra":true},{"titolo":"Meravigliamoci","tipologia":"Presentazione di progetto","ordine":150,"mostra":true},{"titolo":"La Jana e il pastore innamorato","tipologia":"Kamishibai","ordine":160,"mostra":true},{"titolo":"La Bella e la Bestia","tipologia":"Sand Art e narrazione","ordine":170,"mostra":true},{"titolo":"Mary Poppins","tipologia":"Sand Art e narrazione","ordine":180,"mostra":true}],"data/galleria.json":[{"titolo":"Peter e Trilli","immagine":"assets/images/peter-e-trilli.webp","ordine":10,"mostra":true},{"titolo":"L’Isola che non c’è","immagine":"assets/images/isola-che-non-ce.webp","ordine":20,"mostra":true},{"titolo":"Il coccodrillo","immagine":"assets/images/coccodrillo.webp","ordine":30,"mostra":true},{"titolo":"La nave e il volo","immagine":"assets/images/nave-e-volo.webp","ordine":40,"mostra":true},{"titolo":"Capitan Uncino","immagine":"assets/images/capitan-uncino.webp","ordine":50,"mostra":true},{"titolo":"Il cielo stellato","immagine":"assets/images/cielo-stellato.webp","ordine":60,"mostra":true},{"titolo":"Wendy alla finestra","immagine":"assets/images/wendy-alla-finestra.webp","ordine":70,"mostra":true},{"titolo":"La nave dei pirati","immagine":"assets/images/nave-pirati.webp","ordine":80,"mostra":true}]};
+const FALLBACK_DATA={"data/sito.json":{"titolo_pagina":"I Sabbiastorie — Sand Art, voce e teatro","descrizione_pagina":"Spettacoli di Sand Art, narrazione e teatro con Vito Furio e Daniela. Fiabe, memoria, eventi, scuole e festival.","immagine_copertina":"assets/images/logo-copertina-sabbiastorie.webp","testo_copertina":"La sabbia racconta.","testo_sotto_copertina":"Sand Art, voce e teatro in un incontro vivo con il pubblico.","menu_chi_siamo":"Chi siamo","menu_spettacoli":"Spettacoli","menu_repertorio":"Repertorio","menu_galleria":"Galleria","menu_contatti":"Contatti","etichetta_chi_siamo":"Chi siamo","titolo_profilo":"La scena diventa un foglio di luce.","profilo_paragrafo_1":"I Sabbiastorie sono Vito Furio e Daniela Simula. La Sand Art prende forma davanti al pubblico mentre la voce accompagna personaggi, paesaggi e trasformazioni.","profilo_paragrafo_2":"Gli spettacoli uniscono immagine dal vivo, narrazione e teatro, con proposte per teatri, scuole, festival, biblioteche, piazze ed eventi culturali.","vito_nome":"Vito Furio","vito_ruolo":"Sand Artist, artista visivo e regia","daniela_nome":"Daniela Simula","daniela_ruolo":"Voce narrante e interpretazione","etichetta_spettacoli":"In scena","titolo_spettacoli":"Spettacoli","testo_spettacoli":"Fiabe, classici, memoria e proposte interattive raccontate attraverso immagini dal vivo, parola e teatro.","etichetta_repertorio":"Archivio","titolo_repertorio":"Il repertorio","testo_repertorio":"Una selezione dei progetti sviluppati nel tempo, adattabili a spazi, pubblici e occasioni differenti.","etichetta_galleria":"Immagini","titolo_galleria":"Galleria","testo_galleria":"Fotogrammi di Sand Art. Le immagini potranno essere sostituite con una selezione più rappresentativa.","frase":"La sabbia non conserva la forma: conserva il passaggio.","etichetta_contatti":"Contatti","titolo_contatti":"Portiamo una storia nel tuo spazio.","testo_contatti":"Per spettacoli, eventi culturali, scuole, festival, biblioteche e progetti speciali.","etichetta_email":"Email","etichetta_telefono":"Telefono e WhatsApp","email":"furiovito@gmail.com","telefono":"+39 333 334 4665","luogo":"Sardegna • disponibili per trasferte","url_sito":"https://i-sabbiastorie.furiovito.workers.dev/","testo_footer":"I Sabbiastorie — Sand Art, voce e teatro"},"data/spettacoli.json":[{"id":"peter-pan","titolo":"Peter Pan","categoria":"Fiabe e grandi classici","descrizione":"Sand Art e narrazione per attraversare l’Isola che non c’è, il volo, l’avventura e il desiderio di restare bambini.","immagine":"assets/images/peter-e-trilli.webp","in_evidenza":true,"ordine":10},{"id":"canto-di-natale","titolo":"Canto di Natale","categoria":"Spettacoli natalizi","descrizione":"Un racconto visivo ispirato al classico natalizio, tra memoria, trasformazione e possibilità di ricominciare.","immagine":"assets/images/cielo-stellato.webp","in_evidenza":true,"ordine":20},{"id":"bella-e-bestia","titolo":"La Bella e la Bestia","categoria":"Fiabe e grandi classici","descrizione":"Una storia di sguardi, paura e riconoscimento raccontata attraverso voce, musica e immagini che mutano nella sabbia.","immagine":"assets/images/wendy-alla-finestra.webp","in_evidenza":true,"ordine":30},{"id":"mary-poppins","titolo":"Mary Poppins","categoria":"Fiabe e grandi classici","descrizione":"Un viaggio poetico e musicale dove l’ordinario si apre alla meraviglia.","immagine":"assets/images/nave-e-volo.webp","in_evidenza":true,"ordine":40},{"id":"shoah","titolo":"Shoah","categoria":"Memoria e impegno civile","descrizione":"Teatro e Sand Art per custodire la memoria con rigore, delicatezza e forza visiva.","immagine":"assets/images/hero-sabbiastorie.webp","in_evidenza":true,"ordine":50},{"id":"piccolo-principe","titolo":"Il secondo viaggio del Piccolo Principe","categoria":"Fiabe e grandi classici","descrizione":"Un racconto di incontri, domande e paesaggi interiori, nato anche come presentazione del murale di Cargeghe.","immagine":"assets/images/isola-che-non-ce.webp","in_evidenza":true,"ordine":60},{"id":"inventastorie","titolo":"L’Inventastorie","categoria":"Spettacoli interattivi","descrizione":"Il pubblico offre parole, personaggi e luoghi: la storia prende forma dal vivo tra improvvisazione, voce e sabbia.","immagine":"assets/images/capitan-uncino.webp","in_evidenza":true,"ordine":70},{"id":"sotto-le-stelle","titolo":"I Sabbiastorie sotto le stelle","categoria":"Proposte estive","descrizione":"Una serata per piazze e spazi all’aperto con fiabe, musica, Sand Art e momenti interattivi.","immagine":"assets/images/nave-pirati.webp","in_evidenza":true,"ordine":80}],"data/repertorio.json":[{"titolo":"Bergel Circus","tipologia":"Teatro e Sand Art","ordine":10,"mostra":true},{"titolo":"La rivolta del presepe","tipologia":"Teatro e Sand Art","ordine":20,"mostra":true},{"titolo":"Iris, amami amore","tipologia":"Storia d’amore","ordine":30,"mostra":true},{"titolo":"Cappuccetto Rosso","tipologia":"Spettacolo comico, teatro e Sand Art","ordine":40,"mostra":true},{"titolo":"Il lupo che voleva fare la pizza","tipologia":"Teatro e Sand Art","ordine":50,"mostra":true},{"titolo":"Domo Mea — Il rifugio degli animali","tipologia":"Favola originale, teatro e Sand Art","ordine":60,"mostra":true},{"titolo":"Mini fiabe di Stellina","tipologia":"Sand Art e narrazione","ordine":70,"mostra":true},{"titolo":"Shoah","tipologia":"Teatro e Sand Art","ordine":80,"mostra":true},{"titolo":"Il rapimento di Babbo Natale","tipologia":"Teatro e Sand Art","ordine":90,"mostra":true},{"titolo":"Peter Pan","tipologia":"Sand Art e narrazione","ordine":100,"mostra":true},{"titolo":"Canto di Natale","tipologia":"Sand Art e narrazione","ordine":110,"mostra":true},{"titolo":"Sant’Antoni e Su Fogu","tipologia":"Sand Art e narrazione","ordine":120,"mostra":true},{"titolo":"Il secondo viaggio del Piccolo Principe","tipologia":"Narrazione e Sand Art","ordine":130,"mostra":true},{"titolo":"L’Inventastorie","tipologia":"Improvvisazione interattiva","ordine":140,"mostra":true},{"titolo":"Meravigliamoci","tipologia":"Presentazione di progetto","ordine":150,"mostra":true},{"titolo":"La Jana e il pastore innamorato","tipologia":"Kamishibai","ordine":160,"mostra":true},{"titolo":"La Bella e la Bestia","tipologia":"Sand Art e narrazione","ordine":170,"mostra":true},{"titolo":"Mary Poppins","tipologia":"Sand Art e narrazione","ordine":180,"mostra":true}],"data/galleria.json":[{"titolo":"Peter e Trilli","immagine":"assets/images/peter-e-trilli.webp","ordine":10,"mostra":true},{"titolo":"L’Isola che non c’è","immagine":"assets/images/isola-che-non-ce.webp","ordine":20,"mostra":true},{"titolo":"Il coccodrillo","immagine":"assets/images/coccodrillo.webp","ordine":30,"mostra":true},{"titolo":"La nave e il volo","immagine":"assets/images/nave-e-volo.webp","ordine":40,"mostra":true},{"titolo":"Capitan Uncino","immagine":"assets/images/capitan-uncino.webp","ordine":50,"mostra":true},{"titolo":"Il cielo stellato","immagine":"assets/images/cielo-stellato.webp","ordine":60,"mostra":true},{"titolo":"Wendy alla finestra","immagine":"assets/images/wendy-alla-finestra.webp","ordine":70,"mostra":true},{"titolo":"La nave dei pirati","immagine":"assets/images/nave-pirati.webp","ordine":80,"mostra":true}],"data/video.json":[]};
 async function loadJSON(url){try{const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error(url);return await r.json()}catch(e){return FALLBACK_DATA[url]}}
 (async()=>{
-  const [sito,spettacoli,repertorio,galleria]=await Promise.all([
-    loadJSON('data/sito.json'),loadJSON('data/spettacoli.json'),loadJSON('data/repertorio.json'),loadJSON('data/galleria.json')
+  const [sito,spettacoli,video,repertorio,galleria]=await Promise.all([
+    loadJSON('data/sito.json'),loadJSON('data/spettacoli.json'),loadJSON('data/video.json'),loadJSON('data/repertorio.json'),loadJSON('data/galleria.json')
   ]);
 
   document.title=sito.titolo_pagina;
@@ -295,6 +311,38 @@ async function loadJSON(url){try{const r=await fetch(url,{cache:'no-store'});if(
         <div class="card-image"><img src="${esc(x.immagine)}" alt="${esc(x.titolo)}"></div>
         <div class="card-body"><span class="tag">${esc(x.categoria)}</span><h3>${esc(x.titolo)}</h3><p>${esc(x.descrizione)}</p></div>
       </article>`).join('');
+
+  const youtubeId=value=>{
+    const raw=String(value||'').trim();
+    if(!raw)return '';
+    if(/^[A-Za-z0-9_-]{11}$/.test(raw))return raw;
+    try{
+      const url=new URL(raw);
+      if(url.hostname.includes('youtu.be'))return url.pathname.split('/').filter(Boolean)[0]||'';
+      if(url.searchParams.get('v'))return url.searchParams.get('v');
+      const parts=url.pathname.split('/').filter(Boolean);
+      const marker=parts.findIndex(x=>['embed','shorts','live'].includes(x));
+      return marker>=0 ? (parts[marker+1]||'') : '';
+    }catch(e){return ''}
+  };
+  const visibleVideos=(Array.isArray(video)?video:[])
+    .filter(x=>x.mostra!==false && youtubeId(x.youtube_url))
+    .sort((a,b)=>Number(a.ordine)-Number(b.ordine));
+  const videoSection=document.getElementById('video');
+  const videoMenu=document.getElementById('menu-video');
+  if(visibleVideos.length){
+    videoSection.hidden=false;
+    document.getElementById('video-grid').innerHTML=visibleVideos.map(x=>{
+      const id=youtubeId(x.youtube_url);
+      return `<article class="video-card">
+        <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/${esc(id)}?rel=0" title="${esc(x.titolo||'Video I Sabbiastorie')}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="video-body"><h3>${esc(x.titolo||'I Sabbiastorie')}</h3>${x.descrizione?`<p>${esc(x.descrizione)}</p>`:''}</div>
+      </article>`;
+    }).join('');
+  }else{
+    videoSection.hidden=true;
+    videoMenu.hidden=true;
+  }
 
   document.getElementById('rep-list').innerHTML=repertorio
     .filter(x=>x.mostra!==false)
