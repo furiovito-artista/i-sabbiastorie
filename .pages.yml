@@ -82,7 +82,18 @@ content:
         options: {media: immagini}
       - {name: ordine, label: Ordine, type: number, required: true}
       - {name: in_evidenza, label: Mostra nel sito, type: boolean, default: true}
-
+  - name: video
+    label: Video YouTube
+    type: file
+    path: data/video.json
+    format: json
+    list: true
+    fields:
+      - {name: titolo, label: Titolo del video, type: string, required: true}
+      - {name: descrizione, label: Breve descrizione, type: text}
+      - {name: youtube_url, label: Link YouTube, type: string, required: true}
+      - {name: ordine, label: Ordine, type: number, required: true}
+      - {name: mostra, label: Mostra nel sito, type: boolean, default: true}
   - name: repertorio
     label: Repertorio
     type: file
